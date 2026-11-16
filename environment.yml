@@ -1,0 +1,15 @@
+name: lbp
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - scikit-image
+  - scikit-learn
+  - pywavelets
+  - tifffile
+  - matplotlib
+  - pandas
+  - tabulate
+  - requests
+  - pytest

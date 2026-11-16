@@ -1,0 +1,5 @@
+data/
+__pycache__/
+*.pyc
+results/features.npz
+results/figures/_peek.png
