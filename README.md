@@ -100,7 +100,43 @@ never split across train and test. Metrics: accuracy, macro F1, and feature-extr
 
 ## Results
 
-Evaluation in progress; results/tables.md and results/figures/ will be added when the run finishes.
+**Preliminary results (trial run).** These come from an early trial run: the textures downloaded
+at that point, 1 seed, 3 conditions, before the noise-gated variant was added. In that trial the
+relief_0.03 condition used *realistic* prints, so single-image LBP could pick up print artefacts
+(paper grain and blur) rather than relief; the final pipeline uses ideal prints for the relief sweep.
+The full run (all 8 conditions, noise-gated variant) is pending. All tables are in
+[results/tables.md](results/tables.md).
+
+| Method | realistic | misaligned | relief_0.03 (trial) |
+|---|---|---|---|
+| LBP (1 image) | 0.733 | 0.790 | 0.963 |
+| LBP (4 images) | 0.923 | **0.989** | 0.955 |
+| LDB (1 image) | 0.622 | 0.673 | 0.602 |
+| LDB (4 images) | 0.926 | 0.844 | 0.628 |
+| Image difference (4 images) | **1.000** | 0.957 | **0.977** |
+| **DIT-LBP (proposed)** | **1.000** | 0.903 | 0.807 |
+| DIT-LBP multi-radius | **1.000** | 0.955 | 0.923 |
+| DIT-LBP + LBP (1 image) | **1.000** | 0.938 | 0.903 |
+
+Accuracy, grouped 5-fold CV by texture (chance = 0.5).
+
+Observations so far:
+- With realistic prints, DIT-LBP separates raised from printed perfectly, while single-image LBP
+  (0.73) and LDB (0.62) cannot: the information is in the change across lights, not in one image.
+  DIT-LBP does this with 81 dimensions instead of 236 (LBP×4) or 5544 (LDB×4).
+- Mean LBP bits flipped between opposite lights: about 6 of 8 on raised surfaces vs about 0.65 on prints.
+- The simple image-difference baseline matches DIT-LBP here, so DIT-LBP's added value over
+  differencing is not yet shown. Its expected advantage is exact invariance to exposure and
+  gamma changes, which the pending `exposure` condition tests.
+- Weaknesses: DIT-LBP is sensitive to misalignment (0.90 with 1–2 px shifts) and to sensor noise
+  on low-contrast or textureless surfaces. On the real flat white card about 3.9 of 8 bits flip
+  from noise alone, so plain DIT-LBP calls it "raised". The noise-gated variant targets this.
+- Phase-correlation registration of the directional images is biased by moving shadows
+  (3–8 px apparent shifts along the light axis), so capture should be registered with fiducials
+  or a diffusely lit frame, not with the directional images themselves.
+
+![example](results/figures/fig1_example.png)
+![DIT histograms](results/figures/fig4_dit_histograms.png)
 
 ## Reproduce
 

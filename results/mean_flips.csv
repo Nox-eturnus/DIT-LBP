@@ -1,0 +1,7 @@
+condition,label,flip_h,flip_v
+misaligned,0,5.029,4.328
+misaligned,1,3.275,3.28
+realistic,0,6.355,5.928
+realistic,1,0.644,0.663
+relief_0.03,0,1.921,1.815
+relief_0.03,1,1.453,1.434

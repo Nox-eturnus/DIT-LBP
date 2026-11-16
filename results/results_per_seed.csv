@@ -1,0 +1,41 @@
+protocol,train,test,seed,method,accuracy,f1
+within,realistic,realistic,0,LBP (1 image),0.7329545454545454,0.7278947368421053
+within,realistic,realistic,0,LBP (4 images),0.9232954545454546,0.9232799748141332
+within,realistic,realistic,0,LDB (1 image),0.6221590909090909,0.6208094732834939
+within,realistic,realistic,0,LDB (4 images),0.9261363636363636,0.9257311649949687
+within,realistic,realistic,0,Image difference (4 images),1.0,1.0
+within,realistic,realistic,0,DIT-LBP (proposed),1.0,1.0
+within,realistic,realistic,0,DIT-LBP multi-radius,1.0,1.0
+within,realistic,realistic,0,DIT-LBP + LBP (1 image),1.0,1.0
+within,misaligned,misaligned,0,LBP (1 image),0.7897727272727273,0.7890918512760721
+within,misaligned,misaligned,0,LBP (4 images),0.9886363636363636,0.9886348960351286
+within,misaligned,misaligned,0,LDB (1 image),0.6732954545454546,0.6732717220226805
+within,misaligned,misaligned,0,LDB (4 images),0.84375,0.8423645320197044
+within,misaligned,misaligned,0,Image difference (4 images),0.9573863636363636,0.9573832680899148
+within,misaligned,misaligned,0,DIT-LBP (proposed),0.9034090909090909,0.9030303030303031
+within,misaligned,misaligned,0,DIT-LBP multi-radius,0.9545454545454546,0.9544513457556936
+within,misaligned,misaligned,0,DIT-LBP + LBP (1 image),0.9375,0.9372975774063999
+cross,realistic,misaligned,0,LBP (1 image),0.7926136363636364,0.7902966499367527
+cross,realistic,misaligned,0,LBP (4 images),0.9232954545454546,0.9232799748141332
+cross,realistic,misaligned,0,LDB (1 image),0.6392045454545454,0.638851861725762
+cross,realistic,misaligned,0,LDB (4 images),0.8892045454545454,0.8887294832826748
+cross,realistic,misaligned,0,Image difference (4 images),0.7727272727272727,0.7603485838779956
+cross,realistic,misaligned,0,DIT-LBP (proposed),0.6079545454545454,0.5367537669273317
+cross,realistic,misaligned,0,DIT-LBP multi-radius,0.5227272727272727,0.38193979933110367
+cross,realistic,misaligned,0,DIT-LBP + LBP (1 image),0.7215909090909091,0.6981977252843394
+within,relief_0.03,relief_0.03,0,LBP (1 image),0.9630681818181818,0.9630654990112595
+within,relief_0.03,relief_0.03,0,LBP (4 images),0.9545454545454546,0.9545439870863599
+within,relief_0.03,relief_0.03,0,LDB (1 image),0.6022727272727273,0.6000908884344467
+within,relief_0.03,relief_0.03,0,LDB (4 images),0.6278409090909091,0.6265115864672006
+within,relief_0.03,relief_0.03,0,Image difference (4 images),0.9772727272727273,0.9772661220008396
+within,relief_0.03,relief_0.03,0,DIT-LBP (proposed),0.8068181818181818,0.8052083333333333
+within,relief_0.03,relief_0.03,0,DIT-LBP multi-radius,0.9232954545454546,0.922906577762636
+within,relief_0.03,relief_0.03,0,DIT-LBP + LBP (1 image),0.9034090909090909,0.9024994297259425
+cross,realistic,relief_0.03,0,LBP (1 image),0.8096590909090909,0.8055777680683907
+cross,realistic,relief_0.03,0,LBP (4 images),0.71875,0.694591728525981
+cross,realistic,relief_0.03,0,LDB (1 image),0.5596590909090909,0.5420628992051568
+cross,realistic,relief_0.03,0,LDB (4 images),0.53125,0.40329788873478195
+cross,realistic,relief_0.03,0,Image difference (4 images),0.5,0.3333333333333333
+cross,realistic,relief_0.03,0,DIT-LBP (proposed),0.5,0.3333333333333333
+cross,realistic,relief_0.03,0,DIT-LBP multi-radius,0.5142045454545454,0.36414438587410075
+cross,realistic,relief_0.03,0,DIT-LBP + LBP (1 image),0.5,0.3333333333333333
